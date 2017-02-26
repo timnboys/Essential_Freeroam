@@ -1,7 +1,8 @@
 # Essential_Freeroam
 Open freeroam with Essential Mode
 
-#### Integrated features
+#### Planned features
+- Businesses
 - Money System
 - Player Ranking
 - Safehouses
