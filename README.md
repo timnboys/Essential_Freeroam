@@ -3,9 +3,13 @@
 
 Open freeroam with Essential Mode
 
-#### Planned features
+## Planned features
 - Businesses
 - Money System
 - Player Ranking
 - Safehouses
 - Stores
+
+## Contribute
+if you are a developer and  would like to contribute any help is welcome!   
+The contribution guide can be found [here](CONTRIBUTING.MD). 
