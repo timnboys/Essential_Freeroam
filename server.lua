@@ -1,6 +1,7 @@
 local permission = {
-	kick = 1,
-	ban = 4
+	default = 0,
+	staff = 1
+	admin = 2
 }
 
 RegisterServerEvent('playerSpawn')
@@ -10,22 +11,47 @@ AddEventHandler('playerSpawn', function()
 end)
 
 
--- Money Management
 AddEventHandler('es:playerLoaded', function(source)
+	-- Money Management
 TriggerEvent('es:getPlayerFromId', source, function(user)
-
--- Activate the money for the current player
 TriggerClientEvent('es:activateMoney', source, tonumber(user.money))
-
--- Send the player some information regarding the money
 TriggerClientEvent('chatMessage', source, "SYSTEM", {187, 235, 42}, "Your money amount is: $" .. tonumber(user.money))
-
 	end)
 end)
 
 
+-- Set money to the players account
+TriggerEvent('es:addAdminCommand', 'setmoney', permission.admin, function(source, args, user)
+		if(GetPlayerName(tonumber(args[2])))then
+			local player = tonumber(args[2])
+
+			-- User permission check
+			TriggerEvent("es:getPlayerFromId", player, function(target)
+				if(tonumber(target.permission_level) > tonumber(user.permission_level))then
+					TriggerClientEvent("chatMessage", source, "SYSTEM", {255, 0, 0}, "You're not allowed to target this person!")
+					return
+				end
+
+				TriggerEvent("es:setPlayerData", tonumber(args[2]), "money", tonumber(args[3]), function(response, success)
+
+					TriggerClientEvent('es:activateMoney', tonumber(args[2]), tonumber(args[3]))
+
+					if(success)then
+						TriggerClientEvent('chatMessage', tonumber(args[2]), "SYSTEM", {187, 235, 42}, "Your money has been set to: $" .. tonumber(args[3]))
+					end
+				end)
+
+			end)
+		else
+			TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Incorrect player ID!")
+		end
+end, function(source, args, user)
+	TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficienct permissions!")
+end)
+
+
 -- Kicking
-TriggerEvent('es:addAdminCommand', 'kick', permission.kick, function(source, args, user)
+TriggerEvent('es:addAdminCommand', 'kick', permission.staff, function(source, args, user)
 		if(GetPlayerName(tonumber(args[2])))then
 			local player = tonumber(args[2])
 
@@ -45,13 +71,13 @@ TriggerEvent('es:addAdminCommand', 'kick', permission.kick, function(source, arg
 					reason = "Kicked: " .. table.concat(reason, " ")
 				end
 
-				TriggerClientEvent('chatMessage', -1, "SYSTEM", {255, 0, 0}, "Player ^2" .. GetPlayerName(player) .. "^0 has been kicked(^2" .. reason .. "^0)")
+				TriggerClientEvent('chatMessage', -1, "SYSTEM", {187, 235, 42}, "Player ^2" .. GetPlayerName(player) .. "^0 has been kicked(^2" .. reason .. "^0)")
 				DropPlayer(player, reason)
 			end)
 		else
 			TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Incorrect player ID!")
 		end
- end,
+ end
    function(source, args, user)
 	TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Insufficienct permissions!")
 end)
