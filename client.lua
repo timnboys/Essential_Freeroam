@@ -16,7 +16,7 @@ AddEventHandler('onClientMapStart', function()
 end)
 
 -- Allows the server to spawn the player
-RegisterNetEvent('es_freeroam_gamemode:spawnPlayer')
-AddEventHandler('es_freeroam_gamemode:spawnPlayer', function(x, y, z, model)
+RegisterNetEvent('es_freeroam:spawnPlayer')
+AddEventHandler('es_freeroam:spawnPlayer', function(x, y, z, model)
     exports.spawnmanager:spawnPlayer({x = x, y = y, z = z, model = model})
-end)
+  end)
