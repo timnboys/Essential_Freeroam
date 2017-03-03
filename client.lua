@@ -8,7 +8,7 @@ AddEventHandler('onClientMapStart', function()
             return
         end
 
-        spawnLock = false
+        spawnLock = true
 
         TriggerServerEvent('playerSpawn')
         TriggerEvent('playerSpawn')
