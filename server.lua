@@ -1,6 +1,6 @@
 local permission = {
 	default = 0,
-	staff = 1
+	staff = 1,
 	admin = 2
 }
 
