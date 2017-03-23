@@ -2,8 +2,8 @@ Citizen.CreateThread(function()
 
   local blips = {
      -- Airport and Airfield
-      {name="Airport", id=90, x=-1032.690, y=-2728.141, z=13.757},
-      {name="Airport", id=90, x=1743.6820, y=3286.2510, z=40.087},
+     {name="Airport", id=90, x=-1032.690, y=-2728.141, z=13.757},
+     {name="Airport", id=90, x=1743.6820, y=3286.2510, z=40.087},
      -- barbers
      {name="Barber", id=71, x=-827.333, y=-190.916, z=37.599},
      {name="Barber", id=71, x=130.512, y=-1715.535, z=29.226},
@@ -54,6 +54,7 @@ Citizen.CreateThread(function()
       {name="Weapon store", id=110, x=2568.379, y=309.629, z=108.461},
       {name="Weapon store", id=110, x=-3157.450, y=1079.633, z=20.692},
       -- Basic
+      {name="Comedy Club", id=102, x=377.088, y=-991.869, z=-97.604},
       {name="Franklin", id=210, x=7.900, y=548.100, z=175.500},
       {name="Franklin", id=210, x=-14.128,	y=-1445.483,	z=30.648},
       {name="Michael", id=124, x=-852.400, y=160.000, z=65.600},
@@ -67,7 +68,7 @@ Citizen.CreateThread(function()
       {name="Play Boy Mansion", id=439, x=-1475.234, y=167.088, z=55.841},
       -- Propperty
       {name="Casino", id=207, x=925.329, y=46.152, z=80.908 },
-      {name="Maze Bank", id=207, x=-250.604, y=-2030.000, z=30.000},
+      {name="Maze Bank Arena", id=135, x=-250.604, y=-2030.000, z=30.000},
       {name="Stripbar", id=121, x=134.476, y=-1307.887, z=28.983},
       {name="Smoke on the Water", id=140, x=-1171.42, y=-1572.72, z=3.6636},
       {name="Weed Farm", id=140, x=2208.777, y=5578.235, z=53.735},
@@ -170,9 +171,14 @@ Citizen.CreateThread(function()
   RequestIpl("TrevorsMP")
   RequestIpl("TrevorsTrailer")
   RequestIpl("TrevorsTrailerTidy")
+  RemoveIpl("farm_burnt")
+  RemoveIpl("farm_burnt_lod")
+  RemoveIpl("farm_burnt_props")
+  RemoveIpl("farmint_cap")
+  RemoveIpl("farmint_cap_lod")
   RequestIpl("farm")
   RequestIpl("farmint")
-  RemoveIpl("farmint_cap")
+  RequestIpl("farm_lod")
   RequestIpl("farm_props")
   RequestIpl("facelobby")
   RemoveIpl("CS1_02_cf_offmission")
@@ -184,15 +190,19 @@ Citizen.CreateThread(function()
   RemoveIpl("hei_bi_hw1_13_door")
   RequestIpl("bkr_bi_hw1_13_int")
   RequestIpl("ufo")
-  RemoveIpl('v_carshowroom')
-  RemoveIpl('shutter_open')
-  RemoveIpl('shutter_closed')
-  RemoveIpl('shr_int')
-  RemoveIpl('csr_inMission')
-  RequestIpl('v_carshowroom')
-  RequestIpl('shr_int')
-  RequestIpl('shutter_closed')
-  RequestIpl('smboat')
-  RequestIpl('cargoship')
-  RequestIpl('railing_start')
+  RemoveIpl("v_carshowroom")
+  RemoveIpl("shutter_open")
+  RemoveIpl("shutter_closed")
+  RemoveIpl("shr_int")
+  RemoveIpl("csr_inMission")
+  RequestIpl("v_carshowroom")
+  RequestIpl("shr_int")
+  RequestIpl("shutter_closed")
+  RequestIpl("smboat")
+  RequestIpl("cargoship")
+  RequestIpl("railing_start")
+  RemoveIpl("sp1_10_fake_interior")
+  RemoveIpl("sp1_10_fake_interior_lod")
+  RequestIpl("sp1_10_real_interior")
+  RequestIpl("sp1_10_real_interior_lod")
 end)
