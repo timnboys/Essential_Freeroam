@@ -2,6 +2,7 @@
 The information about the changes can be found below.   
 ### v0.1.2 (24-3-2017)   
 #### Features
+- Added Shame or Fame (Maze Bank Arena) IPL
 - Players can now buy weed at "Smoke on The water
 
 #### Fixes
