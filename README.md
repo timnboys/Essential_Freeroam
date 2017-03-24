@@ -4,6 +4,8 @@
 Open freeroam is a FiveM game mode with a money system.  
 The player can receive jobs, survivals, buy buildings, drugs and many more.
 
+ **This project is at an early development stage. you can find the changelog [here](CHANGELOG.md)**
+
 ## Requirements
 
 - [Essentialmode](https://forum.fivem.net/t/release-essentialmode-base/3665)
