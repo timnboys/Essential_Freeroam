@@ -20,4 +20,4 @@ The player can receive jobs, survivals, buy buildings, drugs and many more.
 
 ## Contribute
 if you are a developer and  would like to contribute any help is welcome!   
-The contribution guide can be found [here](CONTRIBUTING.MD).
+The contribution guide can be found [here](CONTRIBUTING.md).
