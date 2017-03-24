@@ -132,6 +132,7 @@ Citizen.CreateThread(function()
       {name="LS Customs", id=72, x= 118.485, y= 6619.560, z= 31.802},
       -- Lester
       {name="Lester", id=77, x=1248.183, y=-1728.104, z=56.000},
+      {name="Lester", id=77, x=719.000, y=-975.000, y=25.000},
       -- Survivals
       {name="Survival", id=305, x=2351.331, y=3086.969, z=48.057},
       {name="Survival", id=305, x=-1695.803, y=-1139.190, z=13.152},
@@ -205,4 +206,12 @@ Citizen.CreateThread(function()
   RemoveIpl("sp1_10_fake_interior_lod")
   RequestIpl("sp1_10_real_interior")
   RequestIpl("sp1_10_real_interior_lod")
+  RemoveIpl("id2_14_during_door")
+  RemoveIpl("id2_14_during1")
+  RemoveIpl("id2_14_during2")
+  RemoveIpl("id2_14_on_fire")
+  RemoveIpl("id2_14_post_no_int")
+  RemoveIpl("id2_14_pre_no_int")
+  RemoveIpl("id2_14_during_door")
+  RequestIpl("id2_14_during1")
 end)

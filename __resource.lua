@@ -11,6 +11,7 @@ dependency 'essentialmode'
 -- General
 client_scripts {
   'client.lua',
+  'events/smoke.lua',  
   'player/map.lua',
   'player/scoreboard.lua',
 }
