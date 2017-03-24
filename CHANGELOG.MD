@@ -5,7 +5,8 @@ The information about the changes can be found below.
 - Players can now buy weed at "Smoke on The water
 
 #### Fixes
-- none 
+- Added Lester's factory missing IPL.
+- Added Lesters factory to the map.
 
 ### v0.1.1 (23-3-2017)   
 #### Features
