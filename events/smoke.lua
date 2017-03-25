@@ -48,10 +48,9 @@ function tick()
                 -- Start mission
                 if(IsControlPressed(1, Keys["E"])) then
                   TriggerServerEvent("es_freeroam:pay", tonumber(50))
-                  showLoadingPromt("Buying weed", 5000, 3)
                     Toxicated()
-                    MISSION.start = true
-                    showStartText = true
+                    Citizen.Wait(120000)
+                    reality()
                 end
               else
                 showStartText = false
@@ -59,40 +58,24 @@ function tick()
             end -- end for
           end--if MISSION.start == false
 
-          if(MISSION.start == true) then
-                Citizen.CreateThread(function()
-                    while true do
-                        vehCheck = IsPedInAnyVehicle(GetPlayerPed(-1), true)
-                        if vehCheck then
-                            SetPlayerWantedLevel(PlayerId(), 1, 0)
-                            SetPlayerWantedLevelNow(PlayerId(), 0)
-                            ShowNotification("~r~You are wanted, Lose the cops!")
-                            Citizen.Wait(59000)
-                        end
 
-                        Citizen.Wait(60000)
-                        DoScreenFadeOut(1000)
-                        Citizen.Wait(1000)
-                        DoScreenFadeIn(1000)
-                        ClearTimecycleModifier()
-                        ResetScenarioTypesEnabled()
-                        ResetPedMovementClipset(GetPlayerPed(-1), 0)
-                        SetPedIsDrunk(GetPlayerPed(-1), false)
-                        SetPedMotionBlur(GetPlayerPed(-1), false)
-                        -- Disable wanted level
-                        SetPlayerWantedLevel(PlayerId(), 0, 0)
-                        SetPlayerWantedLevelNow(PlayerId(), 0)
-                        -- Stop the mini mission
-                        MISSION.start = false
-                      end
-                    end)
-                  end -- if MISSION.start == true
-                end
+                    if(MISSION.start == true) then
+                      Citizen.CreateThread(function()
+                        while true do
+                          vehCheck = IsPedInAnyVehicle(GetPlayerPed(-1), true)
+                          Citizen.Trace("Car details " .. tostring(vehCheck) .. "\n")
+                          if MISSION.start == true and vehCheck then
+                                SetPlayerWantedLevel(PlayerId(), 1, 0)
+                                SetPlayerWantedLevelNow(PlayerId(), 0)
+                          end
+                          Citizen.Trace("Ready to remove wanted\n")
+                        end
+                      end)
+                    end -- end mission.start
+                  end -- end tick
 
 function Toxicated()
   TaskStartScenarioInPlace(GetPlayerPed(-1), "WORLD_HUMAN_DRUG_DEALER", 0, 1)
-  PlayAmbientSpeech1(GetPlayerPed(-1), "GENERIC_CURSE_MED", "SPEECH_PARAMS_FORCE")
-  Citizen.Wait(1000)
   DoScreenFadeOut(1000)
   Citizen.Wait(1000)
   ClearPedTasksImmediately(GetPlayerPed(-1))
@@ -105,9 +88,27 @@ function Toxicated()
     SetPedMovementClipset(GetPlayerPed(-1), "MOVE_M@DRUNK@SLIGHTLYDRUNK", true)
     SetPedIsDrunk(GetPlayerPed(-1), true)
     DoScreenFadeIn(1000)
-    ShowNotification("You are high, Don't drive a car or the cops will ~y~arrest ~w~you!\n ~w~Clear it by leaving the vehicle")
+      MISSION.start = true
+      showStartText = true
   end
 
+  function reality()
+    Citizen.Wait(50000)
+    DoScreenFadeOut(1000)
+    Citizen.Wait(1000)
+    DoScreenFadeIn(1000)
+    ClearTimecycleModifier()
+    ResetScenarioTypesEnabled()
+    ResetPedMovementClipset(GetPlayerPed(-1), 0)
+    SetPedIsDrunk(GetPlayerPed(-1), false)
+    SetPedMotionBlur(GetPlayerPed(-1), false)
+    -- Disable wanted level
+    SetPlayerWantedLevel(PlayerId(), 0, 0)
+    SetPlayerWantedLevelNow(PlayerId(), 0)
+    -- Stop the mini mission
+    MISSION.start = false
+    Citizen.Trace("Going back to reality\n")
+    end
 
 function StartText()
   DrawMarker(1, -1171.42, -1572.72, 3.6636, 0, 0, 0, 0, 0, 0, 4.0, 4.0, 2.0, 178, 236, 93, 155, 0, 0, 2, 0, 0, 0, 0)
@@ -146,15 +147,4 @@ function ShowInfo(text, state)
 	SetTextComponentFormat("STRING")
 	AddTextComponentString(text)
 	DisplayHelpTextFromStringLabel(0, state, 0, -1)
-end
-
-function showLoadingPromt(showText, showTime, showType)
-	Citizen.CreateThread(function()
-		Citizen.Wait(0)
-		N_0xaba17d7ce615adbf("STRING") -- set type
-		AddTextComponentString(showText) -- sets the text
-		N_0xbd12f8228410d9b4(showType) -- show promt (types = 3)
-		Citizen.Wait(showTime) -- show time
-		N_0x10d373323e5b9c0d() -- remove promt
-	end)
 end
