@@ -66,6 +66,11 @@ Citizen.CreateThread(function()
       {name="Tequil-La La", id=93, x=-565.171, y=276.625, z=83.286},
       {name="O'Neil Ranch", id=438, x=2441.200, y=4968.500, z=51.700},
       {name="Play Boy Mansion", id=439, x=-1475.234, y=167.088, z=55.841},
+      {name="Hippy Camp", id=140, x=2476.712, y=3789.645, z=41.226},
+      {name="Chop shop", id=446, x=479.056, y=-1316.825, z=28.203},
+      {name="Rebel Radio", id=136, x=736.153, y=2583.143, z=79.634},
+      {name="Morgue", id=310, x=243.351, y=-1376.014, z=39.534},
+      {name="Golf", id=109, x=-1336.715, y=59.051, z=55.246 },
       -- Propperty
       {name="Casino", id=207, x=925.329, y=46.152, z=80.908 },
       {name="Maze Bank Arena", id=135, x=-250.604, y=-2030.000, z=30.000},
@@ -106,7 +111,6 @@ Citizen.CreateThread(function()
       {name="Gas Station", id=361, x=1181.381, y= -330.847,  z=69.316},
       {name="Gas Station", id=361, x=620.843,  y= 269.100,  z=103.089},
       {name="Gas Station", id=361, x=2581.321, y=362.039, 108.468},
-
       -- Police Stations
       {name="Police Station", id=60, x=425.130, y=-979.558, z=30.711},
       {name="Police Station", id=60, x=1859.234, y= 3678.742, z=33.690},
@@ -214,4 +218,6 @@ Citizen.CreateThread(function()
   RemoveIpl("id2_14_pre_no_int")
   RemoveIpl("id2_14_during_door")
   RequestIpl("id2_14_during1")
+  RequestIpl("Coroner_Int_on")
+  RemoveIpl("Coroner_Int_off")
 end)
