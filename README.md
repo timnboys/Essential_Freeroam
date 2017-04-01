@@ -16,7 +16,8 @@ The player can receive jobs, survivals, buy buildings, drugs and many more.
 2. Extract the folder and rename it to es_freeroam
 3. Place the folder in your resources/[essential] folder
 4. Add - es_freeroam to your AutoStartResources in citmp-server.yml
-4. Restart your server
+5. Change resource_type 'map' { gameTypes = { fivem = true } } with **resource_type 'map' { gameTypes = { essentialmode = true } }** to your fivem-map-skater or fivem-map-hipster resource.lua file.
+6. Restart your server
 
 ## Contribute
 if you are a developer and  would like to contribute any help is welcome!   
