@@ -3,9 +3,12 @@ The information about the changes can be found below.
 
 ## v0.1.2 (2-4-2017)   
 #### Features
-- The scoreboard now shows the ID for each player
 - Added the jewelry store IPL and blip
 - Added the stripclub
+
+#### Fixes
+- The scoreboard now shows the ID for each player
+
 
 ## v0.1.2 (24-3-2017)   
 #### Features
