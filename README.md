@@ -1,7 +1,7 @@
-# Open Freeroam v0.1.2
+# es_freeroam v0.1.2
 <a href="https://discord.gg/eNJraMf"><img alt="Discord Status" src="https://discordapp.com/api/guilds/285462938691567627/widget.png"></a>
 
-Open freeroam is a FiveM game mode with a money system.  
+es_freeroam is a FiveM game mode with a money system.  
 The player can receive jobs, survivals, buy buildings, drugs and many more.
 
  **Note: This project is at an early development stage and we will only continue if other developers contribute to it.   
