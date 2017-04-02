@@ -4,7 +4,8 @@
 Open freeroam is a FiveM game mode with a money system.  
 The player can receive jobs, survivals, buy buildings, drugs and many more.
 
- **This project is at an early development stage. you can find the changelog [here](CHANGELOG.MD)**
+ **Note: This project is at an early development stage and we will only continue if other developers contribute to it.   
+ you can find the current changelog [here](CHANGELOG.MD)**
 
 ## Requirements
 
@@ -16,7 +17,7 @@ The player can receive jobs, survivals, buy buildings, drugs and many more.
 2. Extract the folder and rename it to es_freeroam
 3. Place the folder in your resources/[essential] folder
 4. Add - es_freeroam to your AutoStartResources in citmp-server.yml
-5. Change resource_type 'map' { gameTypes = { fivem = true } } with **resource_type 'map' { gameTypes = { essentialmode = true } }** to your fivem-map-skater or fivem-map-hipster resource.lua file.
+5. Change resource_type 'map' { gameTypes = { fivem = true } } to **resource_type 'map' { gameTypes = { essentialmode = true } }** in your fivem-map-skater or fivem-map-hipster **resource.lua** file.
 6. Restart your server
 
 ## Contribute
