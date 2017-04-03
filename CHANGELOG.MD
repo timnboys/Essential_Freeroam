@@ -1,23 +1,19 @@
 # Changelog
 The information about the changes can be found below.   
 
-## v0.1.2 (2-4-2017)   
-#### Features
-- Added the jewelry store IPL and blip
-- Added the stripclub
-
-#### Fixes
-- The scoreboard now shows the ID for each player
-
-
-## v0.1.2 (24-3-2017)   
+## v0.1.2
 #### Features
 - Added "Fame or Shame" (Maze Bank Arena) IPL and blip
 - Players can now buy weed at "Smoke on The water
+- Added the jewelry store IPL and blip
+- Added the stripclub
+- Added /rmwanted to remove your wanted level
+- Added /help command
 
 #### Fixes
 - Added Lester's factory missing IPL.
 - Added Lesters factory to the map.
+- The scoreboard now shows the ID for each player
 
 ## v0.1.1 (23-3-2017)   
 #### Features
