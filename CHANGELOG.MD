@@ -4,7 +4,7 @@ The information about the changes can be found below.
 ## v0.1.2
 #### Features
 - Added "Fame or Shame" (Maze Bank Arena) IPL and blip
-- Players can now buy weed at "Smoke on The water
+- Players can now buy weed at "Smoke on The water"
 - Added the jewelry store IPL and blip
 - Added the stripclub
 - Added /rmwanted to remove your wanted level
