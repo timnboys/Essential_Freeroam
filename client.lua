@@ -18,15 +18,24 @@ end)
       DisplayCash(false);
       SetNotificationTextEntry("STRING");
       AddTextComponentString("Welcome to ~g~FiveM!.\n ~y~For more info go to github.com/FiveM-Scripts");
-      SetNotificationMessage("CHAR_ALL_PLAYERS_CONF", "CHAR_ALL_PLAYERS_CONF", true, 1, "Essential Freeroam", "v0.1.1");
+      SetNotificationMessage("CHAR_ALL_PLAYERS_CONF", "CHAR_ALL_PLAYERS_CONF", true, 1, "Essential Freeroam", "v0.1.2");
       DrawNotification(false, true);
-      Wait(500000)
+      Wait(1000000)
     end
  end)
 
+   -- give the player some weapons
    Citizen.CreateThread(function()
      GiveWeaponToPed(GetPlayerPed(-1), GetHashKey("WEAPON_KNIFE"), true, true)
    end)
+ end)
+
+ RegisterNetEvent("es_freeroam:wanted")
+ AddEventHandler("es_freeroam:wanted", function()
+   Citizen.CreateThread(function()
+       SetPlayerWantedLevel(PlayerId(), 0, 0)
+       SetPlayerWantedLevelNow(PlayerId(), 0)
+     end)
  end)
 
   -- Display text

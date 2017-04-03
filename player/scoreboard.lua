@@ -71,7 +71,12 @@ local function DrawPlayerList()
 		SetTextScale( 0.45, 0.45 )
 		SetTextColour( 255, 255, 255, 255 )
 		SetTextEntry( "STRING" )
-		AddTextComponentString( GetPlayerName( v ) )
+		if Settings["PlayerID"] then
+			local pid = GetPlayerServerId(v)
+		AddTextComponentString(pid .. " ".. GetPlayerName(v))
+	   else
+			AddTextComponentString(GetPlayerName(v))
+		end
 		DrawText( 0.015, 0.007 + ( k * 0.03 ) )
 
 
