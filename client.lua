@@ -20,7 +20,7 @@ end)
       AddTextComponentString("Welcome to ~g~FiveM!.\n ~y~For more info go to github.com/FiveM-Scripts");
       SetNotificationMessage("CHAR_ALL_PLAYERS_CONF", "CHAR_ALL_PLAYERS_CONF", true, 1, "Essential Freeroam", "v0.1.2");
       DrawNotification(false, true);
-      Wait(1000000)
+      Wait(5000000)
     end
  end)
 
