@@ -9,6 +9,7 @@ The information about the changes can be found below.
 - Added the stripclub
 - Added /rmwanted to remove your wanted level
 - Added /help command
+- Added option to buy drinks at the stripclub
 
 #### Fixes
 - Added Lester's factory missing IPL.
