@@ -15,6 +15,7 @@ client_scripts {
   'player/map.lua',
   'player/scoreboard.lua',
   'stores/stripclub.lua',
+  'events/fleecaJob.lua',
 }
 
 server_scripts {

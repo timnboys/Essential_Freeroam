@@ -63,12 +63,11 @@ function tick()
                       Citizen.CreateThread(function()
                         while true do
                           vehCheck = IsPedInAnyVehicle(GetPlayerPed(-1), true)
-                          Citizen.Trace("Car details " .. tostring(vehCheck) .. "\n")
-                          if MISSION.start == true and vehCheck then
-                                SetPlayerWantedLevel(PlayerId(), 1, 0)
-                                SetPlayerWantedLevelNow(PlayerId(), 0)
-                          end
-                          Citizen.Trace("Ready to remove wanted\n")
+                            if vehCheck then
+                              SetPlayerWantedLevel(PlayerId(), 1, 0)
+                              SetPlayerWantedLevelNow(PlayerId(), 0)
+                              Citizen.Wait(59000)
+                            end
                         end
                       end)
                     end -- end mission.start

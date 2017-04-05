@@ -10,6 +10,16 @@ AddEventHandler('es:playerLoaded', function(source)
 	end)
 end)
 
+RegisterServerEvent('mission:completed')
+AddEventHandler('mission:completed', function(total)
+	-- Get the players money amount
+TriggerEvent('es:getPlayerFromId', source, function(user)
+  -- update player money amount
+  user:addMoney((total))
+ TriggerClientEvent("es_freeroam:notify", source, "CHAR_BANK_MAZE", 1, "Maze Bank", false, "You received ~g~$".. tonumber(total))
+ end)
+end)
+
 RegisterServerEvent('es_freeroam:pay')
 AddEventHandler('es_freeroam:pay', function(amount)
 	-- Get the players money amount
