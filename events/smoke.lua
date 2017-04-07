@@ -64,8 +64,8 @@ function tick()
                         while true do
                           vehCheck = IsPedInAnyVehicle(GetPlayerPed(-1), true)
                             if vehCheck then
-                              SetPlayerWantedLevel(PlayerId(), 1, 0)
-                              SetPlayerWantedLevelNow(PlayerId(), 0)
+                              SetPlayerWantedLevel(GetPlayerPed(-1), 1, 0)
+                              SetPlayerWantedLevelNow(GetPlayerPed(-1), 0)
                               Citizen.Wait(59000)
                             end
                         end
@@ -102,8 +102,8 @@ function Toxicated()
     SetPedIsDrunk(GetPlayerPed(-1), false)
     SetPedMotionBlur(GetPlayerPed(-1), false)
     -- Disable wanted level
-    SetPlayerWantedLevel(PlayerId(), 0, 0)
-    SetPlayerWantedLevelNow(PlayerId(), 0)
+    SetPlayerWantedLevel(GetPlayerPed(-1), 0, 0)
+    SetPlayerWantedLevelNow(GetPlayerPed(-1), 0)
     -- Stop the mini mission
     MISSION.start = false
     Citizen.Trace("Going back to reality\n")
